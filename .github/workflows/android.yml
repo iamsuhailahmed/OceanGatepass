@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Node 20 wali warning fix karne ke liye
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -27,10 +27,11 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Debug APK
-        # Yahan humne --no-daemon ke sath clean add kiya hai taake purani files tang na karen
-        run: ./gradlew clean assembleDebug --stacktrace
+        # Humne '--info' add kiya hai taake agar fail ho toh detail mein bataye kyun hua
+        run: ./gradlew assembleDebug --no-daemon --stacktrace --info
 
       - name: Upload APK
+        if: success() # Sirf tab upload kare agar build pass ho
         uses: actions/upload-artifact@v4
         with:
           name: OceanGatepass-APK
