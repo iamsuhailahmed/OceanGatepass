@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.OceanGatepass" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ocean_blue</item>
+        <item name="colorPrimaryVariant">@color/ocean_mid</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/ocean_dark</item>
+        <item name="android:statusBarColor">@color/ocean_dark</item>
+        <item name="android:navigationBarColor">@color/ocean_dark</item>
+    </style>
+
+    <style name="Theme.OceanGatepass.Splash" parent="Theme.OceanGatepass">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/ocean_dark</item>
+    </style>
+
+</resources>

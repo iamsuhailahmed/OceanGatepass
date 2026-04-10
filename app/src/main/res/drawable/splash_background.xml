@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#0D1B2A"
+                android:centerColor="#1A2F45"
+                android:endColor="#0D1B2A"
+                android:angle="135"
+                android:type="linear" />
+        </shape>
+    </item>
+    <!-- Subtle circle glow effect -->
+    <item
+        android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="#1A4A7A" />
+            <size android:width="300dp" android:height="300dp" />
+        </shape>
+    </item>
+    <!-- Overlay gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#CC0D1B2A"
+                android:endColor="#CC0D1B2A"
+                android:type="radial"
+                android:gradientRadius="400dp" />
+        </shape>
+    </item>
+</layer-list>

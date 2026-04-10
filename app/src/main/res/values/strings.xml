@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ocean Gatepass</string>
+    <string name="loading">لوڈ ہو رہا ہے…</string>
+    <string name="error_title">کنیکشن میں خرابی</string>
+    <string name="retry">دوبارہ کوشش کریں</string>
+</resources>
