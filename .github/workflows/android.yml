@@ -5,6 +5,9 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Node 20 wali warning fix karne ke liye
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,7 +27,8 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        # Yahan humne --no-daemon ke sath clean add kiya hai taake purani files tang na karen
+        run: ./gradlew clean assembleDebug --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
