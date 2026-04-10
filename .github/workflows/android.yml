@@ -2,7 +2,9 @@ name: Build Ocean Gatepass APK
 
 on:
 push:
-branches: [ main, master ]
+branches:
+- main
+- master
 workflow_dispatch:
 
 env:
@@ -20,14 +22,14 @@ steps:
   - name: Set up JDK 17
     uses: actions/setup-java@v4
     with:
+      distribution: temurin
       java-version: '17'
-      distribution: 'temurin'
 
   - name: Setup Android SDK
     uses: android-actions/setup-android@v3
 
   - name: Grant execute permission for gradlew
-    run: chmod +x gradlew
+    run: chmod +x ./gradlew
 
   - name: Build Debug APK
     run: ./gradlew assembleDebug --no-daemon --stacktrace
